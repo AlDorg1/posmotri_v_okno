@@ -54,7 +54,6 @@ ol {
 
 .result__video-container {
   margin-top: 75px;
-  
 }
 
 .result__video {
@@ -108,7 +107,7 @@ ol {
 }
 
 .button:focus {
-outline: none;
+  outline: none;
 }
 
 .more-button {
@@ -188,7 +187,7 @@ outline: none;
 .search-form__checkbox-list {
   display: flex;
   width: fit-content;
-    gap: 15px;
+  gap: 15px;
 }
 
 .search-form__checkbox {
@@ -215,7 +214,7 @@ outline: none;
   border-bottom: 1px solid white;
   border-top: 1px solid white;
   width: 225px;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 21.6px;
@@ -229,15 +228,15 @@ outline: none;
   display: flex;
   border: 1px solid white;
   align-items: center;
-    justify-content: center;
+  justify-content: center;
 }
 
 .search-form__label:has(input:checked) .search-form__pseudo-checkbox::after {
-content: "";
-width: 15px;
-height: 15px;
-background: white;
-display: inline-block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: white;
+  display: inline-block;
 }
 
 .search-form__textfield:has(:focus-visible) {
@@ -245,11 +244,11 @@ display: inline-block;
 }
 
 .search-form__label-text {
-  font-family: 'Fira Sans Condensed', sans-serif;
-font-size: 18px;
-font-weight: 400;
-line-height: 21.6px;
-text-align: left;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: left;
 }
 
 .search-form__label {
@@ -279,11 +278,10 @@ text-align: left;
   background-color: rgba(84, 80, 80, 1);
 }
 
-  .search-form__label:has(:hover) {
-    border-bottom: 1px solid white;
-  }
+.search-form__label:has(:hover) {
+  border-bottom: 1px solid white;
+}
 
-  .content__card-link:hover {
-    text-decoration: underline solid white;
-    
-  }
+.content__card-link:hover {
+  text-decoration: underline solid white;
+}
