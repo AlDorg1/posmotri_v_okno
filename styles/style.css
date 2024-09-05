@@ -16,6 +16,10 @@ html {
   font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 h1,
@@ -39,19 +43,21 @@ ol {
 
 .content {
   display: flex;
-  margin-top: 133px;
   width: 1140px;
   gap: 30px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-.search-form {
-  display: flex;
-  width: 711px;
-  height: 54px;
-  justify-content: space-between;
-  padding-top: 12px;
+.title {
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 70.5px;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  padding-bottom: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 399px;
 }
 
 .result__video-container {
@@ -66,17 +72,12 @@ ol {
   object-position: center;
 }
 
-.title {
-  font-weight: 700;
-  font-size: 75px;
-  line-height: 70.5px;
-  font-family: "Oswald", sans-serif;
-  text-transform: uppercase;
-  padding-bottom: 26px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 399px;
+.search-form {
+  display: flex;
+  width: 711px;
+  height: 54px;
+  justify-content: space-between;
+  padding-top: 12px;
 }
 
 .search-form__fieldset {
@@ -100,104 +101,6 @@ ol {
 .search-form__submit-button {
   width: 194px;
   margin-top: 20px;
-}
-
-.button:hover {
-  text-decoration: underline;
-}
-
-.button:active {
-  background-color: rgba(84, 80, 80, 1);
-}
-
-.button {
-  background-color: transparent;
-  border: 1px solid white;
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 21.6px;
-  text-align: center;
-  color: white;
-  height: 34px;
-  cursor: pointer;
-  padding: 0;
-}
-
-.button:focus {
-  outline: none;
-}
-
-.more-button {
-  width: 399px;
-}
-
-.content__list {
-  width: 399px;
-  height: 298px;
-  overflow: auto;
-  position: relative;
-}
-
-.content__accent {
-  color: rgba(84, 80, 80);
-}
-
-.content__details {
-  width: 100%;
-  height: 100%;
-}
-
-.content__video-card-thumbnail {
-  width: 194px;
-  height: 103px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.content__list-item {
-  display: flex;
-  width: 194px;
-  height: 103px;
-}
-
-.content__list-item:not(:last-child) {
-  margin-bottom: 30px;
-}
-
-.content__video-card-title {
-  font-family: "Oswald", sans-serif;
-  font-size: 30px;
-  font-weight: 700;
-  line-height: 30px;
-  text-align: left;
-  color: white;
-  padding-bottom: 6px;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: 192px;
-}
-
-.content__video-card-description {
-  font-family: "Fira Sans Condensed", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 16.2px;
-  text-align: left;
-  color: white;
-}
-
-.content__card-link {
-  text-decoration: none;
-  margin: 2px;
-}
-
-.content__video-card {
-  display: flex;
-  justify-content: space-between;
-  width: 380px;
 }
 
 .visually-hidden {
@@ -235,6 +138,14 @@ ol {
   color: inherit;
 }
 
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__textfield:has(:focus-visible) {
+  border: 1px solid white;
+}
+
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
@@ -242,22 +153,6 @@ ol {
   border: 1px solid white;
   align-items: center;
   justify-content: center;
-}
-
-.search-form__label:has(input:checked) .search-form__pseudo-checkbox::after {
-  content: "";
-  width: 15px;
-  height: 15px;
-  background: white;
-  display: inline-block;
-}
-
-.search-form__textfield:focus {
-  outline: none;
-}
-
-.search-form__textfield:has(:focus-visible) {
-  border: 1px solid white;
 }
 
 .search-form__label-text {
@@ -275,13 +170,114 @@ ol {
   align-items: center;
 }
 
+.search-form__label:has(input:checked) .search-form__pseudo-checkbox::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background: white;
+  display: inline-block;
+}
+
 .search-form__label:has(:focus-visible) {
   border: 1px solid white;
+}
+
+label:has(input.search-form__checkbox):has(:hover) {
+  text-decoration: underline solid white;
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid white;
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21.6px;
+  text-align: center;
+  color: white;
+  height: 34px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .button:focus-visible {
   outline: 1px solid white;
   outline-offset: 2px;
+}
+
+.button:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.button:hover {
+  text-decoration: underline;
+}
+
+.content__list {
+  width: 399px;
+  height: 298px;
+  overflow: auto;
+  position: relative;
+}
+
+.content__accent {
+  color: rgba(84, 80, 80);
+}
+
+.content__details {
+  width: 100%;
+  height: 100%;
+}
+
+.content__video-card-thumbnail {
+  width: 190px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__list-item {
+  display: flex;
+  width: 194px;
+  height: 103px;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__video-card-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  color: white;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 192px;
+}
+
+.content__video-card-description {
+  font-family: "Fira Sans Condensed", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+  color: white;
+  overflow: hidden;
+}
+
+.content__card-link {
+  text-decoration: none;
+  margin: 2px;
 }
 
 .content__card-link:focus {
@@ -292,18 +288,24 @@ ol {
   outline: 1px solid white;
 }
 
-.content__card-link:active {
-  background-color: rgba(84, 80, 80, 1);
-}
-
-label:has(input.search-form__checkbox):has(:hover) {
-  text-decoration: underline solid white;
-}
-
 .content__card-link:hover {
   text-decoration: underline solid white;
 }
 
+.content__card-link:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+
 .content__card-link_current {
   background-color: rgba(84, 80, 80, 1);
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: space-between;
+  width: 380px;
+}
+
+.more-button {
+  width: 380px;
 }
